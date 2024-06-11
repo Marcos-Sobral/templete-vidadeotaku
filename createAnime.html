@@ -19,81 +19,101 @@
     <main class="container-fluid py-3">
       <div class="bg-dark p-5 rounded-4">
         <H3 class="text-center text-white p-2">Adicionar conteúdo</H3>
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form id="Adicionar_conteudo" method="POST" action="" enctype="multipart/form-data">
+
             <div class="row mb-3">
+                <div class="col-md">
+                    <label for="conteudo_nome_input" class="form-label text-white">*Nome</label>
+                    <input id="conteudo_nome_input" name="conteudo_nome" type="text" class="form-control" placeholder="Nome do Anime">
+                </div>
+
                 <div class="col-lg">
-                  <label for="lista_anime_id" class="form-label text-white">Listas</label>
-                  <select name="lista_anime_id" id="lista_anime_id" class="form-select">
+                  <label for="conteudo_status_input" class="form-label text-white">*Status</label>
+                  <select id="conteudo_status_input" name="conteudo_status" class="form-select">
                           <option value=""></option>
-                          <option value="">Marcos e Débora</option>
-                          <option value="">Coisas para relaxar</option>
-                          <option value="">um dia...</option>
-                          <option value="">mandar pro Carlucas</option>
+                          <option value="Assisitir">Assisitir</option>
+                          <option value="Assistindo">Assistindo</option>
+                          <option value="Pausado">Pausado</option>
+                          <option value="Cancelado">Cancelado</option>
                   </select>
                 </div>
-                <div class="col-lg">
-                  <label for="Status" class="form-label text-white">Status</label>
-                  <select name="Status" id="Status" class="form-select">
+
+                <div class="col-md">
+                  <label for="conteudo_formato_input" class="form-label text-white">*Formato</label>
+                  <select id="conteudo_formato_input" name="conteudo_formato" class="form-select">
                           <option value=""></option>
-                          <option value="">Assisitir</option>
-                          <option value="">Assistindo</option>
-                          <option value="">Pausado</option>
-                          <option value="">Cancelado</option>
-                  </select>
-                </div>
-                <div class="col-md">
-                    <label for="img_anime_id" class="form-label text-white">Capa</label>
-                    <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https//naruto.png">
-                </div>
-                <div class="col-md">
-                    <label for="ep_anime_id" class="form-label text-white">Quantidade</label>
-                    <input name="ep_anime_id" id="ep_anime_id" type="number" class="form-control" placeholder="23">
-                </div>
-                <div class="col-md">
-                  <label for="lista_anime_id" class="form-label text-white">Formato</label>
-                  <select name="lista_anime_id" id="lista_anime_id" class="form-select">
-                          <option value=""></option>
-                          <option value="">Anime</option>
-                          <option value="">Livros</option>
-                          <option value="">Dorama</option>
-                          <option value="">séries</option>
-                          <option value="">Filmes</option>
+                          <option value="Anime">Anime</option>
+                          <option value="Livros">Livros</option>
+                          <option value="Dorama">Dorama</option>
+                          <option value="séries">séries</option>
+                          <option value="Filmes">Filmes</option>
                   </select>
                 </div>
             </div>
 
             <div class="row mb-3">
+
                 <div class="col-md">
-                    <label for="Name" class="form-label text-white">Nome</label>
-                    <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
+                    <label for="conteudo_reacao_input" class="form-label text-white">Reação</label>
+                    <input id="conteudo_reacao_input" name="conteudo_reacao" type="text" class="form-control" placeholder="AMEII">
                 </div>
                 <div class="col-md">
-                    <label for="Link" class="form-label text-white">Link</label>
-                    <input name="Link" id="Link" type="text" class="form-control" placeholder="www.google.com">
+                    <label for="conteudo_genero_input" class="form-label text-white">Gênero</label>
+                    <input id="conteudo_genero_input" name="conteudo_genero" type="text" class="form-control" placeholder="AÇÃO">
+                </div>
+                <div class="col-md">
+                    <label for="conteudo_descricao_input" class="form-label text-white">Descrição</label>
+                    <input id="conteudo_descricao_input" name="conteudo_descricao" type="text" class="form-control" placeholder="Anime top demais">
                 </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-md">
-                    <label for="Status" class="form-label text-white">Qualidade</label>
-                    <input name="Status" id="Status" type="text" class="form-control" placeholder="AMEII">
-                </div>
-                <div class="col-md">
-                    <label for="Genre" class="form-label text-white">Gênero</label>
-                    <input name="Genre" id="Genre" type="text" class="form-control" placeholder="AÇÃO">
-                </div>
-                <div class="col-md">
-                    <label for="Sinopsis" class="form-label text-white">Descrição</label>
-                    <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
-                </div>
-            </div>
+              <div class="col-md">
+                <label for="conteudo_capa_input" class="form-label text-white">Capa</label>
+                <input id="conteudo_capa_input" name="conteudo_capa" type="file" class="form-control">
+              </div>
+
+              <div class="col-md">
+                  <label for="conteudo_quantidade_input" class="form-label text-white">Quantidade</label>
+                  <input id="conteudo_quantidade_input" name="conteudo_quantidade" type="number" class="form-control" placeholder="23">
+              </div>
+
+              <div class="col-md">
+                <label for="conteudo_link_input" class="form-label text-white">Link</label>
+                <input id="conteudo_link_input" name="conteudo_link" type="text" class="form-control" placeholder="www.google.com">
+              </div>
+          </div>
 
             <div class="text-center pt-3">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="button" class="btn btn-primary" onclick="Adicionar_conteudo()">Salvar</button>
             </div>
         </form> 
       </div>
     </main>
+
+    <section class="container-fluid px-5 py-3">
+      <div class="bg-dark rounded-4 p-5 table-responsive">
+          <h1 class="text-center font-bold text-white py-5">Animes adicionados</h1>
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th>Capa</th>
+                <th>Nome da Lista</th>
+                <th>Status da Lista</th>
+                <th>Formato</th>
+                <th>Descrição</th>
+                <th>Gênero</th>
+                <th>Reação</th>
+                <th>Link</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="table_Conteudo">
+  
+            </tbody>
+          </table>
+      </div>
+   </section>  
 
     <footer id="footer"></footer>
     
@@ -101,5 +121,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous">
     </script>    
+    <script src="Assets/js/conteudoList.js"></script>  
 </body>
 </html>
