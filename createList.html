@@ -32,7 +32,7 @@
               <a class="nav-link text-white" target="_blank" href="">Acervo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" target="_blank" href="">Minhas Listas</a>
+              <a class="nav-link text-white" target="_blank" href="myList.html">Minhas Listas</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
@@ -54,49 +54,70 @@
   <main class="container py-3">
     <div class="bg-dark p-5 rounded-4">
       <h3 class="text-center text-white p-2">Criar uma lista</h3>
-      <form method="POST" action="" enctype="multipart/form-data">
+      <form id="criar_lista" method="POST" action="" enctype="multipart/form-data">
         <div class="row mb-3">
             <div class="col-md-4 mb-3">
-              <label for="Name" class="form-label text-white">Nome da lista</label>
-              <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
+              <label for="listas_nome_input" class="form-label text-white">Nome da lista</label>
+              <input id="listas_nome_input"  name="listas_nome" type="text" class="form-control" placeholder="Nome do Anime">
             </div>
             <div class="col-md-4 mb-3">
-                <label for="lista_anime_id" class="form-label text-white">Lista do Anime</label>
-                <select name="lista_anime_id" id="lista_anime_id" class="form-select">
+                <label for="listas__status_input" class="form-label text-white">Lista do Anime</label>
+                <select id="listas_status_input" name="listas_status"  class="form-select">
                         <option value=""></option>
-                        <option value="">Irei acompanhar</option>
-                        <option value="">Acompanhando</option>
-                        <option value="">Pausado</option>
-                        <option value="">Cancelado</option>
+                        <option value="Irei acompanhar">Irei acompanhar</option>
+                        <option value="Acompanhando">Acompanhando</option>
+                        <option value="Pausado">Pausado</option>
+                        <option value="Cancelado">Cancelado</option>
                 </select>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="lista_anime_id" class="form-label text-white">Formato</label>
-                <select name="lista_anime_id" id="lista_anime_id" class="form-select">
-                        <option value="">Variado</option>
-                        <option value="">Anime</option>
-                        <option value="">Livros</option>
-                        <option value="">Dorama</option>
-                        <option value="">Séries</option>
-                        <option value="">Filmes</option>
+                <label for="listas_formato_input" class="form-label text-white">Formato</label>
+                <select id="listas_formato_input" name="listas_formato" class="form-select">
+                        <option value="Variado">Variado</option>
+                        <option value="Anime">Anime</option>
+                        <option value="Livros">Livros</option>
+                        <option value="Dorama">Dorama</option>
+                        <option value="Séries">Séries</option>
+                        <option value="Filmes">Filmes</option>
                 </select>
               </div>
               <div class="col-md-6 mb-3">
-                  <label for="img_anime_id" class="form-label text-white">Imagem da lista</label>
-                  <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https://naruto.png">
+                  <label for="listas_capa_input" class="form-label text-white">Imagem da lista</label>
+                  <input id="listas_capa_input" name="listas_capa" type="text" class="form-control" placeholder="https://naruto.png">
               </div>
               <div class="col-md-6 mb-3">
-                  <label for="Sinopsis" class="form-label text-white">Descrição</label>
-                  <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
+                  <label for="listas_descricao_input" class="form-label text-white">Descrição</label>
+                  <input id="listas_descricao_input" name="listas_descricao" type="text" class="form-control" placeholder="Anime top demais">
               </div>
           </div>
 
           <div class="text-center pt-3">
-              <button type="submit" class="btn btn-primary">Salvar</button>
+              <button type="button" class="btn btn-primary" onclick="Adicionar_item()">Salvar</button>
           </div>
       </form> 
     </div>
   </main>
+
+  <section class="container-fluid px-5 pt-5">
+    <div class="bg-dark-subtle">
+        <h1 class="text-center font-bold">Minhas Listas</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome da Lista</th>
+              <th>Status da Lista</th>
+              <th>Formato</th>
+              <th>Capa</th>
+              <th>Descrição</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="table_myLists">
+
+          </tbody>
+        </table>
+    </div>
+ </section>  
 
     <div class="container-fluid bg-dark">
       <footer class="row row-cols-1 row-cols-sm-3 p-5 border-top">
@@ -133,5 +154,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous">
     </script>    
+    <script src="Assets/js/myLists.js"></script>   
 </body>
 </html>
