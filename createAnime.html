@@ -8,7 +8,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="Assets/img/logo/1.png"  type="image/x-icon">
     <script src="https://kit.fontawesome.com/7d7b31a9bc.js" crossorigin="anonymous"></script>
-    <title>VDO - adicionar anime</title>
+    <title>VDO - Adicionar item na lista</title>
 </head>
 <body>
   <header>
@@ -51,9 +51,8 @@
                     Gerenciamento
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item fw-bold" href="createList.html">Criar uma Lista</a></li>
-                    <li><a class="dropdown-item fw-bold" href="createAnime.html">Adicionar um Anime</a></li>
-                    <li><a class="dropdown-item fw-bold" href="createList.html">Adicionar um Dorama</a></li>
+                    <li><a class="dropdown-item fw-bold" href="createList.html">Criar uma lista</a></li>
+                    <li><a class="dropdown-item fw-bold" href="createAnime.html">Adicionar item na lista</a></li>
                 </ul>
             </li>
           </ul>
@@ -63,27 +62,49 @@
     </nav>
   </header>
       
-    <main class="container p-5">
-        <H3 class="text-center">Criar uma lista de anime</H3>
+    <main class="container-fluid py-3">
+      <div class="bg-dark p-5 rounded-4">
+        <H3 class="text-center text-white p-2">Adicionar conteúdo</H3>
         <form method="POST" action="" enctype="multipart/form-data">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="img_anime_id" class="form-label text-white">Imagem do Anime</label>
-                    <select name="img_anime_id" id="img_anime_id" class="form-select">
-                            <option value=""></option>
-                    </select>
+                  <label for="lista_anime_id" class="form-label text-white">Listas</label>
+                  <select name="lista_anime_id" id="lista_anime_id" class="form-select">
+                          <option value=""></option>
+                          <option value="">Marcos e Débora</option>
+                          <option value="">Coisas para relaxar</option>
+                          <option value="">um dia...</option>
+                          <option value="">mandar pro Carlucas</option>
+                  </select>
                 </div>
                 <div class="col">
-                    <label for="ep_anime_id" class="form-label text-white">EP Anime</label>
-                    <select name="ep_anime_id" id="ep_anime_id" class="form-select">
-                            <option value=""></option>
-                    </select>
+                  <label for="Status" class="form-label text-white">Status</label>
+                  <select name="Status" id="Status" class="form-select">
+                          <option value=""></option>
+                          <option value="">Assisitir</option>
+                          <option value="">Assistindo</option>
+                          <option value="">Pausado</option>
+                          <option value="">Cancelado</option>
+                  </select>
                 </div>
                 <div class="col">
-                    <label for="lista_anime_id" class="form-label text-white">Lista do Anime</label>
-                    <select name="lista_anime_id" id="lista_anime_id" class="form-select">
-                            <option value=""></option>
-                    </select>
+                    <label for="img_anime_id" class="form-label text-white">Capa</label>
+                    <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https//naruto.png">
+                </div>
+                <div class="col">
+                    <label for="ep_anime_id" class="form-label text-white">Quantidade</label>
+                    <input name="ep_anime_id" id="ep_anime_id" type="number" class="form-control" placeholder="23">
+                </div>
+                <div class="col">
+                  <label for="lista_anime_id" class="form-label text-white">Formato</label>
+                  <select name="lista_anime_id" id="lista_anime_id" class="form-select">
+                          <option value=""></option>
+                          <option value="">Anime</option>
+                          <option value="">Livros</option>
+                          <option value="">Dorama</option>
+                          <option value="">séries</option>
+                          <option value="">Filmes</option>
+                  </select>
                 </div>
             </div>
 
@@ -100,7 +121,7 @@
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Status" class="form-label text-white">Status</label>
+                    <label for="Status" class="form-label text-white">Qualidade</label>
                     <input name="Status" id="Status" type="text" class="form-control" placeholder="AMEII">
                 </div>
                 <div class="col">
@@ -113,10 +134,11 @@
                 </div>
             </div>
 
-            <div class="text-center">
+            <div class="text-center pt-3">
                 <button type="submit" class="btn btn-primary">Salvar</button>
             </div>
         </form> 
+      </div>
     </main>
 
     <div class="container-fluid bg-dark">

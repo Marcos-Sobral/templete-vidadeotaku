@@ -51,9 +51,8 @@
                     Gerenciamento
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item fw-bold" href="createList.html">Criar uma Lista</a></li>
-                    <li><a class="dropdown-item fw-bold" href="createAnime.html">Adicionar um Anime</a></li>
-                    <li><a class="dropdown-item fw-bold" href="createList.html">Adicionar um Dorama</a></li>
+                    <li><a class="dropdown-item fw-bold" href="createList.html">Criar uma lista</a></li>
+                    <li><a class="dropdown-item fw-bold" href="createAnime.html">Adicionar item na lista</a></li>
                 </ul>
             </li>
           </ul>
@@ -63,61 +62,41 @@
     </nav>
   </header>
       
-    <main class="container p-5">
-        <H3 class="text-center">Criar uma lista de anime</H3>
-        <form method="POST" action="" enctype="multipart/form-data">
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="img_anime_id" class="form-label text-white">Imagem do Anime</label>
-                    <select name="img_anime_id" id="img_anime_id" class="form-select">
-                            <option value=""></option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="ep_anime_id" class="form-label text-white">EP Anime</label>
-                    <select name="ep_anime_id" id="ep_anime_id" class="form-select">
-                            <option value=""></option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label for="lista_anime_id" class="form-label text-white">Lista do Anime</label>
-                    <select name="lista_anime_id" id="lista_anime_id" class="form-select">
-                            <option value=""></option>
-                    </select>
-                </div>
-            </div>
+  <main class="container-fluid py-3">
+    <div class="bg-dark p-5 rounded-4">
+      <H3 class="text-center text-white p-2">Criar uma lista</H3>
+      <form method="POST" action="" enctype="multipart/form-data">
+          <div class="row mb-3">
+              <div class="col">
+                <label for="lista_anime_id" class="form-label text-white">Lista do Anime</label>
+                <select name="lista_anime_id" id="lista_anime_id" class="form-select">
+                        <option value=""></option>
+                        <option value="">Irei acompanhar</option>
+                        <option value="">Acompanhando</option>
+                        <option value="">Pausado</option>
+                        <option value="">Cancelado</option>
+                </select>
+              </div>
+              <div class="col">
+                  <label for="img_anime_id" class="form-label text-white">Imagem da lista</label>
+                  <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https//naruto.png">
+              </div>
+              <div class="col">
+                  <label for="Name" class="form-label text-white">Nome da lista</label>
+                  <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
+              </div>
+              <div class="col">
+                  <label for="Sinopsis" class="form-label text-white">Descrição</label>
+                  <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
+              </div>
+          </div>
 
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="Name" class="form-label text-white">Nome</label>
-                    <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
-                </div>
-                <div class="col">
-                    <label for="Link" class="form-label text-white">Link</label>
-                    <input name="Link" id="Link" type="text" class="form-control" placeholder="www.google.com">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="Status" class="form-label text-white">Status</label>
-                    <input name="Status" id="Status" type="text" class="form-control" placeholder="AMEII">
-                </div>
-                <div class="col">
-                    <label for="Genre" class="form-label text-white">Gênero</label>
-                    <input name="Genre" id="Genre" type="text" class="form-control" placeholder="AÇÃO">
-                </div>
-                <div class="col">
-                    <label for="Sinopsis" class="form-label text-white">Descrição</label>
-                    <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
-                </div>
-            </div>
-
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-        </form> 
-    </main>
+          <div class="text-center pt-3">
+              <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+      </form> 
+    </div>
+  </main>
 
     <div class="container-fluid bg-dark">
       <footer class="row row-cols-1 row-cols-sm-3 p-5 border-top">
