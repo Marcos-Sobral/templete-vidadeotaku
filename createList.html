@@ -14,7 +14,6 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid d-flex justify-content-between align-items-center mx-5 my-3">
-        
         <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
           <img src="Assets/img/logo/1.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top rounded-circle me-2">
         </a>
@@ -29,10 +28,10 @@
               <a class="nav-link text-white" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" target="_blank" href="">Animes</a>
+              <a class="nav-link text-white" target="_blank" href="#">Animes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" target="_blank" href="">Dorama</a>
+              <a class="nav-link text-white" target="_blank" href="#">Dorama</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
@@ -57,21 +56,20 @@
             </li>
           </ul>
         </div>
-        
       </div>
     </nav>
   </header>
       
-  <main class="container-fluid py-3">
+  <main class="container py-3">
     <div class="bg-dark p-5 rounded-4">
-      <H3 class="text-center text-white p-2">Criar uma lista</H3>
+      <h3 class="text-center text-white p-2">Criar uma lista</h3>
       <form method="POST" action="" enctype="multipart/form-data">
         <div class="row mb-3">
-            <div class="col">
+            <div class="col-md-4 mb-3">
               <label for="Name" class="form-label text-white">Nome da lista</label>
               <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
             </div>
-              <div class="col">
+            <div class="col-md-4 mb-3">
                 <label for="lista_anime_id" class="form-label text-white">Lista do Anime</label>
                 <select name="lista_anime_id" id="lista_anime_id" class="form-select">
                         <option value=""></option>
@@ -81,22 +79,22 @@
                         <option value="">Cancelado</option>
                 </select>
               </div>
-              <div class="col">
+              <div class="col-md-4 mb-3">
                 <label for="lista_anime_id" class="form-label text-white">Formato</label>
                 <select name="lista_anime_id" id="lista_anime_id" class="form-select">
-                        <option value="">variado</option>
+                        <option value="">Variado</option>
                         <option value="">Anime</option>
                         <option value="">Livros</option>
                         <option value="">Dorama</option>
-                        <option value="">séries</option>
+                        <option value="">Séries</option>
                         <option value="">Filmes</option>
                 </select>
               </div>
-              <div class="col">
+              <div class="col-md-6 mb-3">
                   <label for="img_anime_id" class="form-label text-white">Imagem da lista</label>
-                  <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https//naruto.png">
+                  <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https://naruto.png">
               </div>
-              <div class="col">
+              <div class="col-md-6 mb-3">
                   <label for="Sinopsis" class="form-label text-white">Descrição</label>
                   <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
               </div>
@@ -135,8 +133,8 @@
         </div>
       </footer>
       <div class="b-example-divider"></div>
-      <p class="text-white text-center p-3 mb-0"> <!-- Adicionando o texto centralizado -->
-        @2024 - Vida de Otaku desenvolvido por Marcos Sobral <!-- Texto centralizado e de cor branca -->
+      <p class="text-white text-center p-3 mb-0">
+        @2024 - Vida de Otaku desenvolvido por Marcos Sobral
       </p>
     </div>
     
