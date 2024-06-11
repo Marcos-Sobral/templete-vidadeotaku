@@ -66,7 +66,11 @@
     <div class="bg-dark p-5 rounded-4">
       <H3 class="text-center text-white p-2">Criar uma lista</H3>
       <form method="POST" action="" enctype="multipart/form-data">
-          <div class="row mb-3">
+        <div class="row mb-3">
+            <div class="col">
+              <label for="Name" class="form-label text-white">Nome da lista</label>
+              <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
+            </div>
               <div class="col">
                 <label for="lista_anime_id" class="form-label text-white">Lista do Anime</label>
                 <select name="lista_anime_id" id="lista_anime_id" class="form-select">
@@ -78,18 +82,6 @@
                 </select>
               </div>
               <div class="col">
-                  <label for="img_anime_id" class="form-label text-white">Imagem da lista</label>
-                  <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https//naruto.png">
-              </div>
-              <div class="col">
-                  <label for="Name" class="form-label text-white">Nome da lista</label>
-                  <input name="Name" id="Name" type="text" class="form-control" placeholder="Nome do Anime">
-              </div>
-              <div class="col">
-                  <label for="Sinopsis" class="form-label text-white">Descrição</label>
-                  <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
-              </div>
-              <div class="col">
                 <label for="lista_anime_id" class="form-label text-white">Formato</label>
                 <select name="lista_anime_id" id="lista_anime_id" class="form-select">
                         <option value="">variado</option>
@@ -99,6 +91,14 @@
                         <option value="">séries</option>
                         <option value="">Filmes</option>
                 </select>
+              </div>
+              <div class="col">
+                  <label for="img_anime_id" class="form-label text-white">Imagem da lista</label>
+                  <input name="img_anime_id" id="img_anime_id" type="text" class="form-control" placeholder="https//naruto.png">
+              </div>
+              <div class="col">
+                  <label for="Sinopsis" class="form-label text-white">Descrição</label>
+                  <input name="Sinopsis" id="Sinopsis" type="text" class="form-control" placeholder="Anime top demais">
               </div>
           </div>
 
