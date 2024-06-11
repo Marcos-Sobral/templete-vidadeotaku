@@ -8,48 +8,12 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="Assets/img/logo/1.png"  type="image/x-icon">
     <script src="https://kit.fontawesome.com/7d7b31a9bc.js" crossorigin="anonymous"></script>
+    <script src="Assets/js/headerLoad.js" defer></script>
+    <script src="Assets/js/footerLoad.js" defer></script>
     <title>VDO - Criar Lista</title>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid d-flex justify-content-between align-items-center mx-5 my-3">
-        
-        <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
-          <img src="Assets/img/logo/1.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top rounded-circle me-2">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" target="_blank" href="">Acervo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" target="_blank" href="myList.html">Minhas Listas</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Gerenciamento
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item fw-bold" href="createList.html">Criar uma lista</a></li>
-                    <li><a class="dropdown-item fw-bold" href="createAnime.html">Adicionar item na lista</a></li>
-                </ul>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </nav>
-  </header>
+  <header id="header"></header>
       
   <main class="container py-4">
     <div class="bg-dark p-5 rounded-4">
@@ -117,38 +81,9 @@
           </tbody>
         </table>
     </div>
- </section>  
+  </section>  
 
-    <div class="container-fluid bg-dark">
-      <footer class="row row-cols-1 row-cols-sm-3 p-5 border-top">
-        <div class="col mb-3">
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">Dúvidas</a>
-                <p class="mt-2 text-white">(99) xxxxx-xxxx</p>
-            </li>
-          </ul>
-        </div>
-    
-        <div class="col mb-3">
-          <h5 class="text-white">Sobre nós</h5>
-          <p class="mt-2 text-white">O vida de otaku é um sistema voltado para o 
-            público que Brasileiro que ama a cultura de animações japonesas tanto quanto nós.</p>
-        </div>
-    
-        <div class="col mb-3">
-            <h5 class="text-white">Acompanhe pelas redes</h5>
-            <ul class="social list-inline">
-              <li class="list-inline-item"><a href="https://github.com/Marcos-Sobral" class="text-white fs-4"><i class="fab fa-github"></i></a></li>
-              <li class="list-inline-item"><a href="https://www.linkedin.com/in/marcossobral-ti" class="text-white fs-4"><i class="fab fa-linkedin"></i></a></li>
-              <li class="list-inline-item"><a href="https://www.instagram.com/sobral.dev" class="text-white fs-4"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-      </footer>
-      <div class="b-example-divider"></div>
-      <p class="text-white text-center p-3 mb-0">
-        @2024 - Vida de Otaku desenvolvido por Marcos Sobral
-      </p>
-    </div>
+ <footer id="footer"></footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
