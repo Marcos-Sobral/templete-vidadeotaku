@@ -5,19 +5,22 @@
         let item_Nome = formData.get("listas_nome");
         let item_Status = formData.get("listas_status");
         let item_Formato = formData.get("listas_formato");
-        let item_capa = formData.get("listas_capa");
         let item_descricao = formData.get("listas_descricao");
         
+        // Obter o arquivo de imagem e criar uma URL para exibição
+        let item_capa = formData.get("listas_capa");
+        let imgURL = URL.createObjectURL(item_capa);
+
         let lista = document.getElementById("table_myLists");
 
         let tr = document.createElement("tr");
 
         tr.innerHTML =
             `
+                <td><img src="${imgURL}" alt="Capa" style="width: 100px; height: auto;"></td>
                 <td>${item_Nome}</td>
                 <td>${item_Status}</td>
                 <td>${item_Formato}</td>
-                <td>${item_capa}</td>
                 <td>${item_descricao}</td>
                 <td>
                     <button onclick="atualizar_produto(this)" type="button" class="btn btn-primary">Editar</button>

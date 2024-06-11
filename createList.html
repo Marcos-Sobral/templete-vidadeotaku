@@ -51,7 +51,7 @@
     </nav>
   </header>
       
-  <main class="container py-3">
+  <main class="container py-4">
     <div class="bg-dark p-5 rounded-4">
       <h3 class="text-center text-white p-2">Criar uma lista</h3>
       <form id="criar_lista" method="POST" action="" enctype="multipart/form-data">
@@ -83,7 +83,7 @@
               </div>
               <div class="col-md-6 mb-3">
                   <label for="listas_capa_input" class="form-label text-white">Imagem da lista</label>
-                  <input id="listas_capa_input" name="listas_capa" type="text" class="form-control" placeholder="https://naruto.png">
+                  <input id="listas_capa_input" name="listas_capa" type="file" class="form-control" placeholder="https://naruto.png">
               </div>
               <div class="col-md-6 mb-3">
                   <label for="listas_descricao_input" class="form-label text-white">Descrição</label>
@@ -98,10 +98,10 @@
     </div>
   </main>
 
-  <section class="container-fluid px-5 pt-5">
-    <div class="bg-dark-subtle">
-        <h1 class="text-center font-bold">Minhas Listas</h1>
-        <table class="table">
+  <section class="container-fluid px-5 py-3">
+    <div class="bg-dark rounded-4 p-5">
+        <h1 class="text-center font-bold text-white py-5">Minhas Listas</h1>
+        <table class="table text-center">
           <thead>
             <tr>
               <th>Nome da Lista</th>
