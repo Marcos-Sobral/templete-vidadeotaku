@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .anime {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .anime h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anime List</h1>
+    <div id="anime-list"></div>
+
+    <script>
+        const query = `
+        query ($id: Int, $page: Int, $perPage: Int, $search: String) {
+          Page (page: $page, perPage: $perPage) {
+            pageInfo {
+              total
+              currentPage
+              lastPage
+              hasNextPage
+              perPage
+            }
+            media (id: $id, search: $search) {
+              id
+              title {
+                romaji
+                english
+                native
+              }
+              description
+              startDate {
+                year
+                month
+                day
+              }
+              episodes
+              genres
+              averageScore
+            }
+          }
+        }
+        `;
+
+        const variables = {
+            search: "Fate/Zero",
+            page: 1,
+            perPage: 3
+        };
+
+        const url = 'https://graphql.anilist.co';
+
+        async function fetchPage(page) {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: query,
+                    variables: { ...variables, page }
+                })
+            };
+
+            const response = await fetch(url, options);
+            const data = await response.json();
+
+            if (response.ok) {
+                return data.data.Page;
+            } else {
+                throw new Error(`Erro ao buscar dados: ${data.errors.map(err => err.message).join(', ')}`);
+            }
+        }
+
+        async function fetchAllPages() {
+            let page = 1;
+            let hasNextPage = true;
+            const allAnimes = [];
+
+            while (hasNextPage) {
+                try {
+                    const pageData = await fetchPage(page);
+                    allAnimes.push(...pageData.media);
+                    hasNextPage = pageData.pageInfo.hasNextPage;
+                    page++;
+                } catch (error) {
+                    console.error(error);
+                    break;
+                }
+            }
+
+            return allAnimes;
+        }
+
+        function displayAnimes(animes) {
+            const animeList = document.getElementById('anime-list');
+            animeList.innerHTML = '';  // Limpa a lista antes de exibir novos dados
+            animes.forEach(anime => {
+                const animeDiv = document.createElement('div');
+                animeDiv.classList.add('anime');
+                animeDiv.innerHTML = `
+                    <h2>${anime.title.romaji}</h2>
+                    <p><strong>Title (English):</strong> ${anime.title.english || 'N/A'}</p>
+                    <p><strong>Title (Native):</strong> ${anime.title.native}</p>
+                    <p><strong>Description:</strong> ${anime.description || 'N/A'}</p>
+                    <p><strong>Start Date:</strong> ${anime.startDate.year}-${anime.startDate.month}-${anime.startDate.day}</p>
+                    <p><strong>Episodes:</strong> ${anime.episodes || 'N/A'}</p>
+                    <p><strong>Genres:</strong> ${anime.genres.join(', ')}</p>
+                    <p><strong>Average Score:</strong> ${anime.averageScore || 'N/A'}</p>
+                `;
+                animeList.appendChild(animeDiv);
+            });
+        }
+
+        fetchAllPages().then(animes => {
+            displayAnimes(animes);
+        }).catch(error => console.error(error));
+    </script>
+</body>
+</html>
